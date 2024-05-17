@@ -1,0 +1,41 @@
+<template>
+    <section class="flex flex-col w-11/12 md:w-4/5 m-0">
+        <div class="p-4 flex items-center justify-between w-full">
+            <p class="text-xl text-white">github searcher</p>
+            <button v-on:click="themeStore.toggleDarkMode" class="flex items-center justify-end gap-2">
+                <p class="text-2lg text-white">LIGHT</p>
+                <svg class="w-5 fill-white" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d="M 24.984375 3.9863281 A 1.0001 1.0001 0 0 0 24 5 L 24 11 A 1.0001 1.0001 0 1 0 26 11 L 26 5 A 1.0001 1.0001 0 0 0 24.984375 3.9863281 z M 10.888672 9.890625 A 1.0001 1.0001 0 0 0 10.193359 11.607422 L 14.392578 15.806641 A 1.0001 1.0001 0 1 0 15.806641 14.392578 L 11.607422 10.193359 A 1.0001 1.0001 0 0 0 10.888672 9.890625 z M 39.080078 9.890625 A 1.0001 1.0001 0 0 0 38.392578 10.193359 L 34.193359 14.392578 A 1.0001 1.0001 0 1 0 35.607422 15.806641 L 39.806641 11.607422 A 1.0001 1.0001 0 0 0 39.080078 9.890625 z M 25 15 A 1.0001 1.0001 0 0 0 24.591797 15.082031 C 19.260044 15.307579 15 19.611572 15 25 C 15 30.533333 19.466667 35 25 35 C 30.533333 35 35 30.533333 35 25 C 35 19.612238 30.740979 15.308576 25.410156 15.082031 A 1.0001 1.0001 0 0 0 25 15 z M 25 17 C 29.466667 17 33 20.533333 33 25 C 33 29.466667 29.466667 33 25 33 C 20.533333 33 17 29.466667 17 25 C 17 20.533333 20.533333 17 25 17 z M 5 24 A 1.0001 1.0001 0 1 0 5 26 L 11 26 A 1.0001 1.0001 0 1 0 11 24 L 5 24 z M 39 24 A 1.0001 1.0001 0 1 0 39 26 L 45 26 A 1.0001 1.0001 0 1 0 45 24 L 39 24 z M 15.080078 33.890625 A 1.0001 1.0001 0 0 0 14.392578 34.193359 L 10.193359 38.392578 A 1.0001 1.0001 0 1 0 11.607422 39.806641 L 15.806641 35.607422 A 1.0001 1.0001 0 0 0 15.080078 33.890625 z M 34.888672 33.890625 A 1.0001 1.0001 0 0 0 34.193359 35.607422 L 38.392578 39.806641 A 1.0001 1.0001 0 1 0 39.806641 38.392578 L 35.607422 34.193359 A 1.0001 1.0001 0 0 0 34.888672 33.890625 z M 24.984375 37.986328 A 1.0001 1.0001 0 0 0 24 39 L 24 45 A 1.0001 1.0001 0 1 0 26 45 L 26 39 A 1.0001 1.0001 0 0 0 24.984375 37.986328 z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="p-6 flex flex-col md:flex-row justify-between items-center bg-secondaryBlueLight dark:bg-secondaryBlueDark rounded-lg gap-4">
+            <input type="text" v-model="inputText" @input="setStorage" 
+            class="placeholder-white dark:placeholder-gray focus:outline-0 w-full md:w-4/5 text-white text-2lg bg-transparent border-b-2 border-btnBlueLight dark:border-btnBlueDark h-8 mb-4 md:mb-0" 
+            placeholder="Search GitHub username...">
+            <button v-on:click="searchUser" class="w-full md:w-1/5 text-white text-2lg bg-btnBlueLight dark:bg-btnBlueDark h-8 rounded-lg"> Search </button>
+        </div>
+    </section>
+</template>
+
+<script setup>
+import { useStore } from '@/stores/store.js'
+
+const store = useStore()
+
+let inputText = ''
+
+function setStorage(event) {
+    inputText = event.target.value
+}
+
+function searchUser() {
+    store.searchUser(inputText)
+}
+
+import { useThemeStore } from '@/stores/store.js';
+
+const themeStore = useThemeStore();
+</script>
+
+
