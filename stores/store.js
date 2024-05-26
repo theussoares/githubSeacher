@@ -6,7 +6,8 @@ export const useStore = defineStore('store', {
       user: '',
       userNotFound: false,
       userData: {},
-      newDate: ''
+      newDate: '',
+      note: 1
     }),
     actions: {
         date() {

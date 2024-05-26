@@ -43,9 +43,9 @@
                 </ul>
             </div>
     </section>
-    <section v-else-if="store.userNotFound" class="w-11/12 md:w-4/5 text-xl font-thin text-white flex justify-center items-center gap-3 secondaryBlueLight dark:bg-secondaryBlueDark p-10 rounded-lg h-96">Usuário não encontrado :(</section>
+    <section v-else-if="store.userNotFound" class="w-11/12 md:w-4/5 text-xl font-thin text-white flex justify-center items-center gap-3 secondaryBlueLight dark:bg-secondaryBlueDark p-10 rounded-lg h-96">User not found :(</section>
     <section v-else class="w-11/12 md:w-4/5 text-xl font-thin text-white flex justify-center items-center gap-3 bg-secondaryBlueLight dark:bg-secondaryBlueDark p-10 rounded-lg h-96">
-        Por favor coleque um <br> nome de usuário para pesquisar.
+        Please enter a user to searche.
     </section>
 </template>
 

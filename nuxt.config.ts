@@ -6,5 +6,5 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss'
   ],
-  tailwindcss: tailwindConfig
+  tailwindcss: tailwindConfig,
 })

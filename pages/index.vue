@@ -1,11 +1,7 @@
-<script setup lang="ts">
-const route = useRoute()
-</script>
-
 <template>
-  <div>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
-    <a href="https://nuxt.com/docs/getting-started/routing" target="_blank">Learn more about Nuxt Routing</a>
+  <div> 
+    <div class="bg-primaryBlueLight dark:bg-primaryBlueDark min-h-screen flex flex-col justify-center items-center font-sans">
+      <MainPage class="w-full flex flex-col justify-center items-center gap-10"/>
+    </div>
   </div>
 </template>
