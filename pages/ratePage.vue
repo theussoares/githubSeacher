@@ -1,13 +1,10 @@
 <script setup>
-import { useThemeStore, useStore } from '@/stores/store.js';
+import { useThemeStore } from '@/stores/store.js';
 import { submitFeedback } from '@/composables/feedbackService';
 
 const themeStore = useThemeStore();
-const store = useStore();
+const rateBtns = [1, 2, 3, 4, 5]
 
-const rate = (nota) => {
-    store.note = nota
-}
 </script>
 
 <template>
@@ -36,11 +33,9 @@ const rate = (nota) => {
                     </p>
                 </div>
                 <div class="flex justify-between mt-5">
-                    <button @click="rate(1)" class="bg-primaryBlueLight dark:bg-primaryBlueDark focus:bg-primaryBlueDark dark:focus:bg-primaryBlueLight hover:brightness-90 dark:hover:brightness-125 w-10 h-10 rounded-full text-white">1</button>
-                    <button @click="rate(2)" class="bg-primaryBlueLight dark:bg-primaryBlueDark focus:bg-primaryBlueDark dark:focus:bg-primaryBlueLight hover:brightness-90 dark:hover:brightness-125 w-10 h-10 rounded-full text-white">2</button>
-                    <button @click="rate(3)" class="bg-primaryBlueLight dark:bg-primaryBlueDark focus:bg-primaryBlueDark dark:focus:bg-primaryBlueLight hover:brightness-90 dark:hover:brightness-125 w-10 h-10 rounded-full text-white">3</button>
-                    <button @click="rate(4)" class="bg-primaryBlueLight dark:bg-primaryBlueDark focus:bg-primaryBlueDark dark:focus:bg-primaryBlueLight hover:brightness-90 dark:hover:brightness-125 w-10 h-10 rounded-full text-white">4</button>
-                    <button @click="rate(5)" class="bg-primaryBlueLight dark:bg-primaryBlueDark focus:bg-primaryBlueDark dark:focus:bg-primaryBlueLight hover:brightness-90 dark:hover:brightness-125 w-10 h-10 rounded-full text-white">5</button>
+                    <div v-for="rateBtn in rateBtns">
+                        <RateButton  :rateValue="rateBtn"/>
+                    </div>
                 </div>
                 <NuxtLink @click="submitFeedback(store.note)" to="/ratedPage" class="bg-primaryBlueLight dark:bg-primaryBlueDark hover:brightness-90 dark:hover:brightness-125 w-full h-10 rounded-3xl mt-5 text-white flex items-center justify-center">SUBMIT</NuxtLink>
             </div>

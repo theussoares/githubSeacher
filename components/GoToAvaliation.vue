@@ -4,8 +4,8 @@
          bg-secondaryBlueLight dark:bg-secondaryBlueDark rounded-lg gap-4">
             <p class="text-xl text-white">Rate our app!</p>
             
-                <button class="w-full md:w-1/5 text-white text-2lg bg-btnBlueLight
-                dark:bg-btnBlueDark h-8 rounded-lg"><NuxtLink to="/ratePage"> Rate </NuxtLink></button>
+                <NuxtLink to="/ratePage" class="w-full md:w-1/5 text-white text-2lg bg-btnBlueLight
+                dark:bg-btnBlueDark h-8 rounded-lg flex justify-center items-center">Rate</NuxtLink>
             
         </div>
     </section>
