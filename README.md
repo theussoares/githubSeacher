@@ -39,6 +39,10 @@
 
 - Node 20.11.1
 
+- Firestore
+
+- Firebase
+
 # Api
 
 - GitHub
